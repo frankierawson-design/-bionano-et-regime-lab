@@ -1,0 +1,19 @@
+{
+  "scenario": "QBET nanogap",
+  "status": "illustrative; not an experimental fit",
+  "parameters": {
+    "h0MeV": 50,
+    "r0Nm": 0.5,
+    "rNm": 0.8,
+    "betaRatePerAngstrom": 0.3,
+    "deltaEv": -0.02,
+    "deltaG0Ev": -0.2,
+    "overpotentialV": 0,
+    "lambdaEv": 0.2,
+    "temperatureK": 298,
+    "gamma1PerPs": 1,
+    "gammaPhiPerPs": 5,
+    "conductanceNs": 4,
+    "quantumCapacitanceAf": 10
+  }
+}

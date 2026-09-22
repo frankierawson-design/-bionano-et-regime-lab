@@ -1,0 +1,25 @@
+{
+  "name": "bionano-et-regime-lab",
+  "version": "0.2.0",
+  "description": "Transparent reduced-order models for electron-transfer hypothesis testing at bio-nano interfaces.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/model.js && node --check src/scenarios.js && node --check app.js && node --test",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "bioelectrochemistry",
+    "electron-transfer",
+    "marcus-theory",
+    "open-quantum-systems",
+    "quantum-capacitance",
+    "bipolar-electrochemistry"
+  ],
+  "author": "Frankie J. Rawson",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

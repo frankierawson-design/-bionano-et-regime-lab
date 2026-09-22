@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "BioNano ET Regime Lab"
+type: software
+version: 0.2.0
+date-released: 2026-09-22
+authors:
+  - family-names: Rawson
+    given-names: Frankie J.
+    orcid: "https://orcid.org/0000-0002-4872-8928"
+    affiliation: "University of Nottingham"
+license: MIT
+keywords:
+  - bioelectrochemistry
+  - electron transfer
+  - Marcus theory
+  - open quantum systems
+  - quantum capacitance
+  - bipolar electrochemistry
+abstract: >-
+  Deterministic browser software for transparent hypothesis testing with
+  reduced-order electron-transfer models at bio-nano interfaces.

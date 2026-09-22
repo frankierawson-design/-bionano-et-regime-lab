@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Transparent reduced-order electron-transfer modelling at bio-nano interfaces.">
+    <title>BioNano ET Regime Lab</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand-mark" aria-hidden="true">⌬</div>
+      <div>
+        <div class="title-line">
+          <h1>BioNano ET Regime Lab</h1>
+          <span class="version">v0.2.0 RC</span>
+        </div>
+        <p>Two-state dynamics, Marcus kinetics and quantum-capacitance timescales—computed on classical hardware.</p>
+      </div>
+      <div class="badges"><span>No quantum processor required</span><span>Runs locally in your browser</span></div>
+    </header>
+
+    <div class="notice" role="note">
+      <strong>Interpretive boundary:</strong> this is a deterministic hypothesis-generation tool, not a mechanism classifier or validated predictor of cellular response.
+    </div>
+
+    <main>
+      <section class="metric-grid" aria-label="Principal outputs">
+        <article class="metric"><span>Effective coupling H<sub>DA</sub></span><strong id="metric-coupling">—</strong></article>
+        <article class="metric"><span>Marcus benchmark</span><strong id="metric-marcus">—</strong></article>
+        <article class="metric"><span>Timescale ratio</span><strong id="metric-zeta">—</strong></article>
+        <article class="metric"><span>Reservoir scale G/C<sub>q</sub></span><strong id="metric-reservoir">—</strong></article>
+      </section>
+
+      <section class="workspace">
+        <aside class="controls">
+          <div class="panel-heading">
+            <div><span class="eyebrow">Model inputs</span><h2>Interface definition</h2></div>
+            <button id="reset-button" type="button">Reset</button>
+          </div>
+          <label class="scenario-label" for="scenario-select">Starting scenario</label>
+          <select id="scenario-select"></select>
+          <p id="scenario-description" class="scenario-description"></p>
+          <div id="input-groups"></div>
+          <button id="export-button" class="export-button" type="button">Export inputs and outputs</button>
+        </aside>
+
+        <div class="results">
+          <article class="panel chart-panel">
+            <div class="panel-heading chart-heading">
+              <div><h2>Illustrative acceptor-state population</h2><p>Thermalising two-level Bloch model; not experimental data</p></div>
+              <div class="legend"><span class="cyan">T<sub>1</sub>/T<sub>2</sub> model</span><span class="magenta">Unitary limit</span><span class="grey">Gibbs equilibrium</span></div>
+            </div>
+            <canvas id="population-chart" aria-label="Acceptor-state population against time"></canvas>
+            <dl class="chart-stats">
+              <div><dt>Coherent period</dt><dd id="stat-period">—</dd></div>
+              <div><dt>Coherence time</dt><dd id="stat-t2">—</dd></div>
+              <div><dt>Thermal P<sub>A</sub>(eq)</dt><dd id="stat-equilibrium">—</dd></div>
+            </dl>
+          </article>
+
+          <article class="panel rate-panel">
+            <div class="panel-heading"><div><h2>Characteristic-rate comparison</h2><p>Logarithmic display; rates are diagnostic, not interchangeable</p></div></div>
+            <div id="rate-bars"></div>
+          </article>
+
+          <article class="panel diagnostics-panel">
+            <div class="panel-heading"><div><h2>Dimensionless diagnostics</h2><p>Reference equalities are not mechanism boundaries</p></div></div>
+            <div class="diagnostic-grid">
+              <div><span>ζ · coupling/decoherence</span><strong id="diag-zeta">—</strong><small>ζ &gt; 1 does not prove coherence</small></div>
+              <div><span>M · Hamiltonian mixing</span><strong id="diag-mixing">—</strong><small>Not a measured transfer yield</small></div>
+              <div><span>A · activation number</span><strong id="diag-activation">—</strong><small>A ≈ 0 marks the Marcus activationless condition</small></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>BioNano ET Regime Lab · Frankie J. Rawson · MIT licence</p>
+      <p><a href="docs/scientific-method.md">Scientific method</a> · <a href="docs/limitations.md">Limitations</a></p>
+    </footer>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
