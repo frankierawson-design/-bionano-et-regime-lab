@@ -6,6 +6,11 @@ All notable changes are recorded here.
 
 ### Added
 
+- Fixed-seed, 100,000-draw Monte Carlo uncertainty propagation for the Jain GNP100 linker dataset.
+- Versioned Monte Carlo summary output and compressed draw-level results.
+- A reproducibility test that reruns the analysis twice and checks byte-for-byte identical outputs.
+- An npm command, `npm run jain:gnp100:monte-carlo`, for reproducing the analysis.
+
 - Versioned GNP100 polyethylene-glycol linker data from Jain et al. 2024.
 - Executable comparison using the released effective-coupling and Marcus-benchmark functions.
 - Separate independent and data-derived distance-decay comparisons.
@@ -13,6 +18,10 @@ All notable changes are recorded here.
 - Documentation of the observable mismatch and circularity boundary.
 
 ### Validation status
+
+- The full automated suite now contains 12 tests; all 12 pass.
+- The length-plus-rate uncertainty analysis gives median α = 0.17214 nm⁻¹, 95% interval 0.02099–0.40002 nm⁻¹ and P(α > 0) = 0.98343.
+- This uncertainty propagation concerns published summary measurements and is not validation of a microscopic electron-transfer mechanism.
 
 - The independent comparison gives χ² = 121.7002.
 - The data-derived descriptive comparison gives χ² = 3.47185.

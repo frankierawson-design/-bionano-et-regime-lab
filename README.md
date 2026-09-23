@@ -112,3 +112,33 @@ Run the comparison with:
 
 ```bash
 npm run jain:gnp100
+```
+
+## Reproducible GNP100 Monte Carlo uncertainty analysis
+
+Version 0.2.1 includes a fixed-seed, 100,000-draw uncertainty analysis of the GNP100 polyethylene-glycol linker data reported by Jain et al. in *Nature Nanotechnology* (https://doi.org/10.1038/s41565-023-01496-y).
+
+Run the analysis with:
+
+```bash
+npm run jain:gnp100:monte-carlo
+```
+
+The analysis independently samples the published linker-length and biological charging-rate means and standard deviations using Gaussian distributions. Non-positive sampled values are rejected and resampled.
+
+Each draw estimates the apparent decay coefficient using `ln(r_d) = intercept - α × linker length`.
+
+The fixed-seed v0.2.1 result when both length and rate uncertainties are propagated is:
+
+- Median α: 0.17214 nm⁻¹
+- 95% interval: 0.02099–0.40002 nm⁻¹
+- P(α > 0): 0.98343
+
+The analysis creates:
+
+- `results/jain-2024-gnp100-monte-carlo-summary.json`
+- `results/jain-2024-gnp100-monte-carlo-draws.csv.gz`
+
+The compressed CSV contains all 100,000 draw-level α values for both the rate-only and length-plus-rate scenarios. The automated test reruns the calculation twice, verifies byte-for-byte reproducibility and checks the expected numerical summaries.
+
+This analysis propagates uncertainty in published summary measurements. It is not a stochastic electron-transfer simulation and does not validate a microscopic mechanism.

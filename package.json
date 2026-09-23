@@ -8,7 +8,8 @@
     "test": "node --test",
     "check": "node --check src/model.js && node --check src/scenarios.js && node --check app.js && node --test",
     "serve": "python3 -m http.server 8000",
-    "jain:gnp100": "node scripts/jain-2024-gnp100.mjs"
+    "jain:gnp100": "node scripts/jain-2024-gnp100.mjs",
+    "jain:gnp100:monte-carlo": "node scripts/jain-2024-gnp100-monte-carlo.mjs"
   },
   "keywords": [
     "bioelectrochemistry",
