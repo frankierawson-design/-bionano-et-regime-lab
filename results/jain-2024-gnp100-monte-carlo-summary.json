@@ -1,0 +1,31 @@
+{
+  "analysis": "Jain et al. GNP100 apparent distance-decay uncertainty analysis",
+  "softwareVersion": "0.2.1",
+  "sourceDoi": "https://doi.org/10.1038/s41565-023-01496-y",
+  "seed": 20260905,
+  "randomNumberGenerator": "Mulberry32 with Box-Muller Gaussian transformation",
+  "drawsPerScenario": 100000,
+  "fit": "Unweighted ordinary least squares of ln(r_d) = intercept - alpha * length",
+  "sampling": {
+    "independence": "Published length and rate uncertainties sampled independently",
+    "distributions": "Gaussian using published means and SD values",
+    "truncation": "Non-positive or non-finite sampled lengths and rates rejected and resampled"
+  },
+  "scenarios": {
+    "rateOnly": {
+      "draws": 100000,
+      "medianAlphaNmInverse": 0.21250266872084372,
+      "lower95AlphaNmInverse": 0.1324601713922496,
+      "upper95AlphaNmInverse": 0.34061157236785355,
+      "probabilityAlphaGreaterThanZero": 0.99999
+    },
+    "lengthAndRate": {
+      "draws": 100000,
+      "medianAlphaNmInverse": 0.17213673123335338,
+      "lower95AlphaNmInverse": 0.02099212833508796,
+      "upper95AlphaNmInverse": 0.40002337317870046,
+      "probabilityAlphaGreaterThanZero": 0.98343
+    }
+  },
+  "interpretation": "This propagates published summary uncertainties. It is not a stochastic electron-transfer simulation and does not validate a microscopic mechanism."
+}

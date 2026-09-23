@@ -1,0 +1,128 @@
+{
+  "softwareVersion": "0.2.1",
+  "sourceSoftwareFunctions": [
+    "effectiveCoupling",
+    "marcusBenchmark"
+  ],
+  "sourceDataset": "https://doi.org/10.1038/s41565-023-01496-y",
+  "fixedParameters": {
+    "h0MeV": 50,
+    "r0Nm": 0.5,
+    "deltaG0Ev": -0.2,
+    "overpotentialV": 0,
+    "lambdaEv": 0.2,
+    "temperatureK": 310
+  },
+  "blind": {
+    "label": "Independent Page-Moser-Chen-Dutton coefficient",
+    "betaRatePerAngstrom": 1.382,
+    "chiSquare": 121.70016062175795,
+    "rows": [
+      {
+        "pegKDa": 1,
+        "lengthNm": 2.7,
+        "lengthSdNm": 2.08,
+        "ratePerSecond": 0.000019416,
+        "rateSd": 0.0000041139,
+        "couplingMeV": 0.000012497561726390138,
+        "predictedRatePerSecond": 0.000019416,
+        "residualStandardDeviations": 0,
+        "marcusRatePerSecond": 5.754100735606445
+      },
+      {
+        "pegKDa": 2,
+        "lengthNm": 3.8,
+        "lengthSdNm": 2.69,
+        "ratePerSecond": 0.000016213,
+        "rateSd": 0.0000015644,
+        "couplingMeV": 6.248171383973176e-9,
+        "predictedRatePerSecond": 4.85305316959182e-12,
+        "residualStandardDeviations": 10.363714617071611,
+        "marcusRatePerSecond": 0.00000143824458246217
+      },
+      {
+        "pegKDa": 3.5,
+        "lengthNm": 7.15,
+        "lengthSdNm": 2.69,
+        "ratePerSecond": 0.0000041953,
+        "rateSd": 0.0000018529,
+        "couplingMeV": 5.526970151317533e-19,
+        "predictedRatePerSecond": 3.7973744217199134e-32,
+        "residualStandardDeviations": 2.2641804738518,
+        "marcusRatePerSecond": 1.1253849893588619e-26
+      },
+      {
+        "pegKDa": 5,
+        "lengthNm": 10.7,
+        "lengthSdNm": 1.69,
+        "ratePerSecond": 0.0000042494,
+        "rateSd": 0.0000014035,
+        "couplingMeV": 1.2275136518017798e-29,
+        "predictedRatePerSecond": 1.8731037964492598e-53,
+        "residualStandardDeviations": 3.0277164232276452,
+        "marcusRatePerSecond": 5.551106269579566e-48
+      }
+    ]
+  },
+  "descriptive": {
+    "label": "Data-derived Jain apparent slope",
+    "betaRatePerAngstrom": 0.023,
+    "chiSquare": 3.4718480291332963,
+    "rows": [
+      {
+        "pegKDa": 1,
+        "lengthNm": 2.7,
+        "lengthSdNm": 2.08,
+        "ratePerSecond": 0.000019416,
+        "rateSd": 0.0000041139,
+        "couplingMeV": 38.8233940911869,
+        "predictedRatePerSecond": 0.000019416,
+        "residualStandardDeviations": 0,
+        "marcusRatePerSecond": 55528236442467.57
+      },
+      {
+        "pegKDa": 2,
+        "lengthNm": 3.8,
+        "lengthSdNm": 2.69,
+        "ratePerSecond": 0.000016213,
+        "rateSd": 0.0000015644,
+        "couplingMeV": 34.21017127069436,
+        "predictedRatePerSecond": 0.000015075900393489695,
+        "residualStandardDeviations": 0.7268598865445561,
+        "marcusRatePerSecond": 43115892131890.48
+      },
+      {
+        "pegKDa": 3.5,
+        "lengthNm": 7.15,
+        "lengthSdNm": 2.69,
+        "ratePerSecond": 0.0000041953,
+        "rateSd": 0.0000018529,
+        "couplingMeV": 23.27251394999771,
+        "predictedRatePerSecond": 0.000006976849601691697,
+        "residualStandardDeviations": -1.5011871130075538,
+        "marcusRatePerSecond": 19953242393194.867
+      },
+      {
+        "pegKDa": 5,
+        "lengthNm": 10.7,
+        "lengthSdNm": 1.69,
+        "ratePerSecond": 0.0000042494,
+        "rateSd": 0.0000014035,
+        "couplingMeV": 15.471861784865993,
+        "predictedRatePerSecond": 0.0000030835991452919716,
+        "residualStandardDeviations": 0.8306383004688485,
+        "marcusRatePerSecond": 8818851588049.186
+      }
+    ]
+  },
+  "shortestLinkerComparison": {
+    "marcusRatePerSecond": 55528236442467.57,
+    "observedBiologicalProxyPerSecond": 0.000019416,
+    "differenceOrdersOfMagnitude": 18.45635411732558
+  },
+  "interpretation": {
+    "blind": "Independent shape comparison; amplitude anchored to the shortest-linker observation.",
+    "descriptive": "Circular descriptive comparison because the slope was estimated from the same data.",
+    "boundary": "The microscopic Marcus benchmark and biological charging proxy are different observables."
+  }
+}

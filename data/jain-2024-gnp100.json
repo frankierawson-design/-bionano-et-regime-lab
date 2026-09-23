@@ -1,0 +1,40 @@
+{
+  "title": "Jain et al. 2024 GNP100 linker dataset",
+  "source": "https://doi.org/10.1038/s41565-023-01496-y",
+  "sourceData": "Official Figure 6 source-data workbook",
+  "observable": "Biological donor-charging proxy rd",
+  "units": {
+    "length": "nm",
+    "rate": "s-1"
+  },
+  "data": [
+    {
+      "pegKDa": 1,
+      "lengthNm": 2.7,
+      "lengthSdNm": 2.08,
+      "ratePerSecond": 0.000019416,
+      "rateSd": 0.0000041139
+    },
+    {
+      "pegKDa": 2,
+      "lengthNm": 3.8,
+      "lengthSdNm": 2.69,
+      "ratePerSecond": 0.000016213,
+      "rateSd": 0.0000015644
+    },
+    {
+      "pegKDa": 3.5,
+      "lengthNm": 7.15,
+      "lengthSdNm": 2.69,
+      "ratePerSecond": 0.0000041953,
+      "rateSd": 0.0000018529
+    },
+    {
+      "pegKDa": 5,
+      "lengthNm": 10.7,
+      "lengthSdNm": 1.69,
+      "ratePerSecond": 0.0000042494,
+      "rateSd": 0.0000014035
+    }
+  ]
+}
