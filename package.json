@@ -1,13 +1,14 @@
 {
   "name": "bionano-et-regime-lab",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Transparent reduced-order models for electron-transfer hypothesis testing at bio-nano interfaces.",
   "type": "module",
   "private": true,
   "scripts": {
     "test": "node --test",
     "check": "node --check src/model.js && node --check src/scenarios.js && node --check app.js && node --test",
-    "serve": "python3 -m http.server 8000"
+    "serve": "python3 -m http.server 8000",
+    "jain:gnp100": "node scripts/jain-2024-gnp100.mjs"
   },
   "keywords": [
     "bioelectrochemistry",

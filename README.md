@@ -97,3 +97,18 @@ MIT. See [`LICENSE`](LICENSE).
 ## AI-use disclosure
 
 AI-assisted tools were used during software implementation, drafting, structural editing and documentation. The author is responsible for reviewing and validating all scientific claims, equations, calculations and released code.
+## Jain 2024 GNP100 external comparison
+
+Version 0.2.1 includes a reproducible comparison with the GNP100 polyethylene-glycol linker data reported by Jain et al. in Nature Nanotechnology.
+
+Source article: https://doi.org/10.1038/s41565-023-01496-y
+
+The analysis compares two distance-decay coefficients:
+
+- An independent Page–Moser–Chen–Dutton coefficient of 1.382 Å⁻¹.
+- A data-derived apparent slope of 0.023 Å⁻¹ reported for the same experimental dataset.
+
+Run the comparison with:
+
+```bash
+npm run jain:gnp100
