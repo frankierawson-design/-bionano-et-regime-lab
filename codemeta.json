@@ -1,9 +1,11 @@
 {
+
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "name": "BioNano ET Regime Lab",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "dateCreated": "2026-09-22",
+  "dateModified": "2026-09-24",
   "description": "Deterministic browser software for transparent hypothesis testing with reduced-order electron-transfer models at bio-nano interfaces.",
   "applicationCategory": "Research software",
   "programmingLanguage": ["JavaScript", "HTML", "CSS"],

@@ -1,6 +1,23 @@
 # Changelog
 
 All notable changes are recorded here.
+## [0.2.2] - 2026-09-24
+
+### Added
+
+- Comprehensive browser-based user guide.
+- Definitions of the principal electron-transfer parameters and diagnostics.
+- Step-by-step instructions for using the modelling interface.
+- Direct navigation between the software and user guide.
+
+### Changed
+
+- Expanded documentation of intended use, interpretation boundaries and known limitations.
+
+### Scientific scope
+
+- This documentation release does not introduce a new physical model or provide additional experimental validation.
+- The Jain GNP100 comparison and Monte Carlo uncertainty analysis retain the interpretation boundaries documented in v0.2.1.
 
 ## [0.2.1] - 2026-09-23
 

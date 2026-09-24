@@ -14,7 +14,7 @@ The software is intended for **hypothesis generation, dimensional checking, teac
 
 ## Release status
 
-This repository is a **v0.2.0 release candidate** reconstructed from the documented model specification. The equations and deterministic checks are implemented and tested, but independent held-out experimental validation and a biological observation model remain outstanding. It must not be described as a validated predictive package.
+This repository contains **BioNano ET Regime Lab v0.2.2**. The equations and deterministic checks are implemented and tested, but independent held-out experimental validation and a biological observation model remain outstanding. It must not be described as a validated predictive package.
 
 ## Run locally
 
