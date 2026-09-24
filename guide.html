@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Guide | BioNano ET Regime Lab</title>
+
+  <style>
+    :root {
+      --background: #07111f;
+      --panel: #0d1b2e;
+      --panel-light: #13253b;
+      --text: #edf6ff;
+      --muted: #a8bdd2;
+      --accent: #47d7e8;
+      --warning: #ffd166;
+      --border: #27415d;
+      --link: #75e5f2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    header {
+      padding: 2rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, #0b1c30, #081321);
+    }
+
+    header div,
+    main {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin-top: 2.5rem;
+      color: var(--accent);
+    }
+
+    p,
+    li {
+      color: var(--muted);
+    }
+
+    strong {
+      color: var(--text);
+    }
+
+    a {
+      color: var(--link);
+    }
+
+    main {
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.7rem 1rem;
+      color: #03111a;
+      background: var(--accent);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .secondary {
+      color: var(--text);
+      background: var(--panel-light);
+      border: 1px solid var(--border);
+    }
+
+    .notice {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: #2a2412;
+      border-left: 4px solid var(--warning);
+      border-radius: 6px;
+    }
+
+    .notice p {
+      margin: 0;
+      color: #fff2c1;
+    }
+
+    details {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--text);
+      font-size: 1.05rem;
+      font-weight: bold;
+    }
+
+    .equation {
+      overflow-x: auto;
+      margin: 1rem 0;
+      padding: 1rem;
+      color: var(--text);
+      background: #050c16;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: "Courier New", monospace;
+    }
+
+    footer {
+      padding: 2rem 1.25rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      margin: 0.3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div>
+    <h1>BioNano ET Regime Lab: User Guide</h1>
+
+    <p>
+      Guidance for exploring simplified electron-transfer models at
+      biological and nanoscale interfaces.
+    </p>
+
+    <nav class="navigation">
+      <a class="button" href="index.html">Open the software</a>
+
+      <a class="button secondary"
+         href="https://github.com/frankierawson-design/-bionano-et-regime-lab">
+        View source code
+      </a>
+
+      <a class="button secondary"
+         href="https://doi.org/10.5281/zenodo.22918231">
+        Cite version 0.2.1
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>What is BioNano ET Regime Lab?</h2>
+
+    <p>
+      BioNano ET Regime Lab is an exploratory research tool for examining
+      assumptions in simplified models of electron transfer at bio–nano
+      interfaces.
+    </p>
+
+    <p>It combines:</p>
+
+    <ul>
+      <li>distance-dependent donor–acceptor coupling;</li>
+      <li>thermalising two-state population dynamics;</li>
+      <li>a nonadiabatic Marcus-rate benchmark;</li>
+      <li>conductance–capacitance charging timescales; and</li>
+      <li>dimensionless indicators for comparing possible regimes.</li>
+    </ul>
+
+    <div class="notice">
+      <p>
+        <strong>Important:</strong> This is a hypothesis-generation and
+        experiment-design tool. It does not prove quantum coherence,
+        electron tunnelling or a microscopic biological mechanism.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Quick-start guide</h2>
+
+    <ol>
+      <li>
+        <strong>Select a starting scenario.</strong>
+        Presets provide illustrative starting values, not validated
+        representations of every interface.
+      </li>
+
+      <li>
+        <strong>Check every input and unit.</strong>
+        Do not assume that a default value is appropriate for your system.
+      </li>
+
+      <li>
+        <strong>Change one parameter at a time.</strong>
+        This helps identify which assumption causes an output to change.
+      </li>
+
+      <li>
+        <strong>Inspect the headline outputs.</strong>
+        Compare the effective coupling, Marcus benchmark and
+        conductance–capacitance rate.
+      </li>
+
+      <li>
+        <strong>Examine the population plot.</strong>
+        The curves represent model-state populations, not cell populations.
+      </li>
+
+      <li>
+        <strong>Compare timescales.</strong>
+        Large differences may reveal a missing process between microscopic
+        electron transfer and the measured biological response.
+      </li>
+
+      <li>
+        <strong>Export the calculation.</strong>
+        Record the software version, inputs, units and outputs so the result
+        can be reproduced.
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Input definitions</h2>
+
+    <details>
+      <summary>Donor–acceptor distance, r</summary>
+
+      <p>
+        The separation between the modelled electron donor and acceptor.
+        Coupling normally decreases rapidly as this distance increases.
+      </p>
+
+      <p>
+        The distance should not automatically be interpreted as nanoparticle
+        diameter, linker contour length or electrode separation.
+      </p>
+
+      <p>
+        <strong>Version 0.2.1 warning:</strong> normally require
+        r ≥ r<sub>0</sub>. Values below the reference distance extrapolate
+        the exponential law beyond its intended range.
+      </p>
+    </details>
+
+    <details>
+      <summary>Reference distance, r<sub>0</sub></summary>
+
+      <p>
+        The distance at which the reference electronic coupling
+        H<sub>0</sub> is defined.
+      </p>
+    </details>
+
+    <details>
+      <summary>Reference coupling, H<sub>0</sub></summary>
+
+      <p>
+        The donor–acceptor electronic coupling at r<sub>0</sub>. It should
+        ideally come from a calculation, experiment or cited literature
+        source appropriate to the system.
+      </p>
+    </details>
+
+    <details>
+      <summary>Distance-decay coefficient, β<sub>k</sub></summary>
+
+      <p>
+        Describes how rapidly donor–acceptor coupling decreases with
+        distance.
+      </p>
+
+      <div class="equation">
+        H<sub>DA</sub>(r) =
+        H<sub>0</sub> exp[−β<sub>k</sub>(r−r<sub>0</sub>)/2]
+      </div>
+
+      <p>
+        The factor of one-half ensures that the squared coupling used in a
+        rate expression follows:
+      </p>
+
+      <div class="equation">
+        |H<sub>DA</sub>(r)|² ∝
+        exp[−β<sub>k</sub>(r−r<sub>0</sub>)]
+      </div>
+
+      <p>
+        Always report the convention and units because published definitions
+        can differ.
+      </p>
+    </details>
+
+    <details>
+      <summary>Driving free energy, ΔG°</summary>
+
+      <p>
+        The free-energy change associated with electron transfer. Negative
+        values normally indicate thermodynamically favourable transfer.
+        Marcus theory does not predict an unlimited rate increase as the
+        driving force becomes increasingly negative.
+      </p>
+    </details>
+
+    <details>
+      <summary>Reorganisation energy, λ</summary>
+
+      <p>
+        The energy required to reorganise the donor, acceptor and surrounding
+        environment during electron transfer.
+      </p>
+    </details>
+
+    <details>
+      <summary>Temperature, T</summary>
+
+      <p>
+        The absolute temperature used in the thermal and Marcus calculations.
+        Enter temperature in kelvin.
+      </p>
+    </details>
+
+    <details>
+      <summary>Local overpotential, η</summary>
+
+      <p>
+        An additional electrochemical driving term at the interface. An
+        externally applied voltage should not be treated as a molecular-scale
+        overpotential without an appropriate physical model.
+      </p>
+    </details>
+
+    <details>
+      <summary>Longitudinal relaxation rate, Γ<sub>1</sub></summary>
+
+      <p>
+        Controls how quickly the model populations relax towards equilibrium.
+        It is a phenomenological parameter rather than a direct measurement
+        of one biological process.
+      </p>
+    </details>
+
+    <details>
+      <summary>Dephasing rate, Γ<sub>2</sub></summary>
+
+      <p>
+        Controls how quickly phase coherence between the model states is
+        lost. A low modelled dephasing rate does not demonstrate experimentally
+        observable quantum coherence.
+      </p>
+    </details>
+
+    <details>
+      <summary>Quantum capacitance, C<sub>q</sub></summary>
+
+      <p>
+        An effective measure of how electronic states accommodate charge as
+        their electrochemical potential changes. It is not automatically
+        equivalent to the total capacitance obtained from impedance
+        spectroscopy.
+      </p>
+    </details>
+
+    <details>
+      <summary>Conductance, G</summary>
+
+      <p>
+        The effective conductance of the modelled interface. Together with
+        C<sub>q</sub>, it produces the characteristic rate:
+      </p>
+
+      <div class="equation">
+        k<sub>G/Cq</sub> = G / C<sub>q</sub>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>Output definitions</h2>
+
+    <details>
+      <summary>Effective coupling, H<sub>DA</sub></summary>
+
+      <p>
+        The donor–acceptor coupling calculated after applying the selected
+        distance dependence. A larger value means stronger coupling within
+        the model; it does not establish a physical transfer pathway.
+      </p>
+    </details>
+
+    <details>
+      <summary>Marcus-rate benchmark</summary>
+
+      <p>
+        A nonadiabatic microscopic electron-transfer rate calculated from the
+        selected coupling, driving free energy, reorganisation energy and
+        temperature.
+      </p>
+
+      <p>
+        Connecting this rate to fluorescence, cellular charging or another
+        biological endpoint requires an additional transduction model.
+      </p>
+    </details>
+
+    <details>
+      <summary>Acceptor-state population</summary>
+
+      <p>
+        The calculated probability associated with the acceptor state. It is
+        not a cell population, electron count or measured transfer
+        efficiency.
+      </p>
+    </details>
+
+    <details>
+      <summary>Gibbs-equilibrium population</summary>
+
+      <p>
+        The thermal equilibrium population predicted from the specified
+        energy difference and temperature.
+      </p>
+    </details>
+
+    <details>
+      <summary>Unitary limit</summary>
+
+      <p>
+        The idealised evolution of an isolated two-state system without
+        relaxation or dephasing. It is a reference calculation, not a claim
+        that a biological interface is isolated.
+      </p>
+    </details>
+
+    <details>
+      <summary>Timescale indicator, ζ</summary>
+
+      <p>
+        A dimensionless comparison between coupling and dephasing or
+        relaxation timescales. It is a diagnostic rather than a universal
+        boundary between classical and quantum behaviour.
+      </p>
+
+      <p>
+        If the coupling and dephasing rate are both zero, the ratio is
+        mathematically undefined. Version 0.2.1 may display infinity in this
+        boundary case; do not interpret that value physically.
+      </p>
+    </details>
+
+    <details>
+      <summary>Conductance–capacitance rate, G/C<sub>q</sub></summary>
+
+      <p>
+        The characteristic rate for charging an effective capacitance through
+        an effective conductance. Agreement with a Marcus rate does not prove
+        that both values describe the same mechanism.
+      </p>
+    </details>
+  </section>
+
+  <section>
+    <h2>Interpreting the calculated regimes</h2>
+
+    <details>
+      <summary>Coupling-limited behaviour</summary>
+
+      <p>
+        The result changes strongly with distance or β<sub>k</sub>.
+        A suitable experiment could vary linker length while controlling
+        particle loading, orientation and local environment.
+      </p>
+    </details>
+
+    <details>
+      <summary>Activation-controlled behaviour</summary>
+
+      <p>
+        The Marcus benchmark changes strongly with ΔG°, λ or temperature.
+        A prospective test could examine temperature and potential dependence.
+      </p>
+    </details>
+
+    <details>
+      <summary>Dephasing-dominated behaviour</summary>
+
+      <p>
+        Features of the reduced two-state trajectory disappear rapidly as
+        Γ<sub>2</sub> increases. Experiments must distinguish dephasing from
+        conventional changes in conductivity, viscosity or kinetics.
+      </p>
+    </details>
+
+    <details>
+      <summary>Interface-charging limitation</summary>
+
+      <p>
+        The G/C<sub>q</sub> rate is much slower than the microscopic Marcus
+        benchmark. Conductance and capacitance should then be measured
+        independently.
+      </p>
+    </details>
+
+    <details>
+      <summary>Missing transduction layer</summary>
+
+      <p>
+        A large difference between a microscopic rate and a biological
+        response suggests that an explicit model may be needed to connect
+        electron transfer, charge accumulation, ionic transport,
+        membrane-potential change and the final measurement.
+      </p>
+    </details>
+  </section>
+
+  <section>
+    <h2>Recommended controls</h2>
+
+    <ul>
+      <li>field-only controls;</li>
+      <li>nanoparticle-only controls;</li>
+      <li>donor-only and acceptor-only controls;</li>
+      <li>redox-inactive or non-conductive particle controls;</li>
+      <li>matched linker-length series;</li>
+      <li>temperature and local-heating measurements;</li>
+      <li>membrane-integrity measurements;</li>
+      <li>direct measurement of redox products;</li>
+      <li>ionic-current measurements;</li>
+      <li>independent particle-loading measurements; and</li>
+      <li>held-out conditions not used to fit the model.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Reporting checklist</h2>
+
+    <ol>
+      <li>Report the software version and DOI.</li>
+      <li>Report every input value and unit.</li>
+      <li>State the source of each parameter.</li>
+      <li>Distinguish fitted parameters from independently specified values.</li>
+      <li>Identify the experimental observable used for comparison.</li>
+      <li>Report excluded or non-finite calculations.</li>
+      <li>Include sensitivity or uncertainty analysis.</li>
+      <li>Do not describe numerical agreement as mechanistic validation.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Verification status</h2>
+
+    <p>
+      Version 0.2.1 includes 12 automated tests, a reproducible comparison
+      with published GNP100 linker summary data and a fixed-seed,
+      100,000-draw uncertainty analysis.
+    </p>
+
+    <p>
+      These checks support computational reproducibility. Independent
+      line-by-line code review, prospective prediction and experimental
+      validation remain outstanding.
+    </p>
+  </section>
+
+  <section>
+    <h2>Further information</h2>
+
+    <ul>
+      <li>
+        <a href="https://chemrxiv.org/doi/full/10.26434/chemrxiv.15009117">
+          Mechanistic-framework preprint
+        </a>
+      </li>
+
+      <li>
+        <a href="https://doi.org/10.5281/zenodo.22918231">
+          Archived software release
+        </a>
+      </li>
+
+      <li>
+        <a href="https://github.com/frankierawson-design/-bionano-et-regime-lab">
+          GitHub repository
+        </a>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>BioNano ET Regime Lab version 0.2.1</p>
+  <p>Open research software for hypothesis generation and experiment design.</p>
+</footer>
+</body>
+</html>

@@ -147,3 +147,29 @@ footer p { margin: 0; } a { color: var(--cyan); }
   footer { margin: 0 16px; display: block; }
   footer p + p { margin-top: 7px; }
 }
+.guide-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.75rem 1.25rem;
+  background: rgba(7, 17, 31, 0.95);
+  border-bottom: 1px solid #27415d;
+  backdrop-filter: blur(8px);
+}
+
+.guide-button {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  color: #03111a;
+  background: #47d7e8;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.guide-button:hover,
+.guide-button:focus {
+  background: #75e5f2;
+}
