@@ -1,6 +1,6 @@
 {
   "name": "bionano-et-regime-lab",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Transparent reduced-order models for electron-transfer hypothesis testing at bio-nano interfaces.",
   "type": "module",
   "private": true,
