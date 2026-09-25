@@ -99,7 +99,7 @@ MIT. See [`LICENSE`](LICENSE).
 AI-assisted tools were used during software implementation, drafting, structural editing and documentation. The author is responsible for reviewing and validating all scientific claims, equations, calculations and released code.
 ## Jain 2024 GNP100 external comparison
 
-Version 0.2.1 includes a reproducible comparison with the GNP100 polyethylene-glycol linker data reported by Jain et al. in Nature Nanotechnology.
+The GNP100 polyethylene-glycol linker comparison introduced in v0.2.1 remains part of v0.2.2. The source data were reported by Jain et al. in *Nature Nanotechnology*.
 
 Source article: https://doi.org/10.1038/s41565-023-01496-y
 
@@ -116,7 +116,7 @@ npm run jain:gnp100
 
 ## Reproducible GNP100 Monte Carlo uncertainty analysis
 
-Version 0.2.1 includes a fixed-seed, 100,000-draw uncertainty analysis of the GNP100 polyethylene-glycol linker data reported by Jain et al. in *Nature Nanotechnology* (https://doi.org/10.1038/s41565-023-01496-y).
+The fixed-seed, 100,000-draw uncertainty analysis introduced in v0.2.1 remains part of v0.2.2. It uses the GNP100 polyethylene-glycol linker data reported by Jain et al. in *Nature Nanotechnology* (https://doi.org/10.1038/s41565-023-01496-y).
 
 Run the analysis with:
 
