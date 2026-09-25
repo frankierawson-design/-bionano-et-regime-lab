@@ -4,6 +4,8 @@ title: "BioNano ET Regime Lab"
 type: software
 version: 0.2.2
 date-released: 2026-09-24
+doi: 10.5281/zenodo.22941432
+repository-code: https://github.com/frankierawson-design/-bionano-et-regime-lab
 authors:
   - family-names: Rawson
     given-names: Frankie J.

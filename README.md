@@ -21,8 +21,8 @@ This repository contains **BioNano ET Regime Lab v0.2.2**. The equations and det
 No production dependencies or build step are required.
 
 ```bash
-git clone REPOSITORY_URL
-cd bionano-et-regime-lab
+git clone https://github.com/frankierawson-design/-bionano-et-regime-lab.git
+cd ./-bionano-et-regime-lab
 python3 -m http.server 8000
 ```
 
@@ -84,7 +84,7 @@ The application has no random component. The same parameter object returns the s
 
 ## Citation
 
-Until a journal article or archived release DOI is available, cite the software using [`CITATION.cff`](CITATION.cff). After creating a tagged GitHub release, archive that exact release with Zenodo and add the DOI to this README, `CITATION.cff` and the accompanying manuscript.
+Cite version 0.2.2 using its archived release DOI: [10.5281/zenodo.22941432](https://doi.org/10.5281/zenodo.22941432). Citation details are also in [`CITATION.cff`](CITATION.cff). The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) points to the latest archived version; use the version-specific DOI to identify the exact software used.
 
 ## Contributing and support
 

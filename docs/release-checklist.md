@@ -9,7 +9,7 @@
 - [x] Contribution and support instructions.
 - [x] Scientific limitations and AI-use disclosure.
 - [ ] Independent browser matrix recorded on Windows, macOS and Linux.
-- [ ] Public GitHub repository URL added to metadata.
-- [ ] Tagged release created.
-- [ ] Tagged release archived and DOI added to metadata.
+- [x] Public GitHub repository URL added to metadata.
+- [x] Tagged release created.
+- [x] Tagged release archived and DOI added to metadata.
 - [ ] Independent held-out validation and observation model completed before v1.0.0.
