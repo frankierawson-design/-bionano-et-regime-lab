@@ -225,7 +225,7 @@ function renderChart(result) {
 function exportResult() {
   const payload = {
     software: "BioNano ET Regime Lab",
-    version: "0.2.0",
+    version: "0.2.2",
     exportedAt: new Date().toISOString(),
     scenario: scenarios[currentScenarioKey].name,
     warning: "Illustrative reduced-order output; not a mechanism assignment or experimental prediction.",
