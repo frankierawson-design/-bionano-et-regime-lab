@@ -1,5 +1,7 @@
 # Changelog
 
+All notable changes are recorded here.
+
 ## [0.2.3] - 2026-10-02
 
 ### Changed
@@ -14,7 +16,6 @@
 - No new experimental validation is claimed.
 - The v0.2.3 version DOI will be added to citation metadata after Zenodo archiving.
 
-All notable changes are recorded here.
 ## [0.2.2] - 2026-09-24
 
 ### Added
