@@ -1,6 +1,21 @@
 # Changelog
 
 All notable changes are recorded here.
+
+## [0.2.3] - 2026-10-02
+
+### Changed
+
+- Published a metadata and documentation consistency release from the corrected `main` state.
+- Aligned the application, package metadata, citation instructions and release notes at v0.2.3.
+- Preserved v0.2.2 and its archive unchanged.
+
+### Scientific scope
+
+- No scientific model or numerical calculation changed.
+- No new experimental validation is claimed.
+- The v0.2.3 version DOI will be added to citation metadata after Zenodo archiving.
+
 ## [0.2.2] - 2026-09-24
 
 ### Added
