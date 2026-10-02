@@ -14,7 +14,7 @@ All notable changes are recorded here.
 
 - No scientific model or numerical calculation changed.
 - No new experimental validation is claimed.
-- The v0.2.3 version DOI will be added to citation metadata after Zenodo archiving.
+- Zenodo archived v0.2.3 as [10.5281/zenodo.23104009](https://doi.org/10.5281/zenodo.23104009); the version DOI is recorded in the citation metadata.
 
 ## [0.2.2] - 2026-09-24
 

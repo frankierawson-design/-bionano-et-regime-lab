@@ -84,7 +84,7 @@ The application has no random component. The same parameter object returns the s
 
 ## Citation
 
-The version-specific DOI for v0.2.3 will be added here and to [`CITATION.cff`](CITATION.cff) and [`codemeta.json`](codemeta.json) after Zenodo archives this release. For v0.2.2, cite [10.5281/zenodo.22941432](https://doi.org/10.5281/zenodo.22941432). The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) identifies the software record and resolves to its latest archived version.
+Cite v0.2.3 using its archived release DOI: [10.5281/zenodo.23104009](https://doi.org/10.5281/zenodo.23104009). For v0.2.2, cite [10.5281/zenodo.22941432](https://doi.org/10.5281/zenodo.22941432). The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) identifies the software record and resolves to its latest archived version.
 
 ## Contributing and support
 
