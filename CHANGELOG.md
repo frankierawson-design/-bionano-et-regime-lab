@@ -2,6 +2,24 @@
 
 All notable changes are recorded here.
 
+## [0.2.4] - Unreleased
+
+### Changed
+
+- Prepare a documentation release that includes the citation corrections made after the v0.2.3 tag.
+- Label the v0.2.3 archive explicitly wherever its DOI is retained as a historical citation.
+- Align the application, JSON export and package version at v0.2.4.
+
+### Release requirement
+
+- Reserve the v0.2.4 Zenodo DOI and insert it into CITATION.cff, CodeMeta, README and the user guide before tagging this release.
+- Preserve the v0.2.3 tag and archive.
+
+### Scientific scope
+
+- No scientific model or numerical calculation changed.
+- No new experimental validation is claimed.
+
 ## [0.2.3] - 2026-10-02
 
 ### Changed

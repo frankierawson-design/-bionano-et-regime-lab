@@ -2,9 +2,8 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 title: "BioNano ET Regime Lab"
 type: software
-version: 0.2.3
-date-released: 2026-10-02
-doi: 10.5281/zenodo.23104009
+version: 0.2.4
+date-released: 2026-10-03
 repository-code: https://github.com/frankierawson-design/-bionano-et-regime-lab
 authors:
   - family-names: Rawson
