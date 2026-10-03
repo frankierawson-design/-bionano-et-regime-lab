@@ -2,18 +2,18 @@
 
 All notable changes are recorded here.
 
-## [0.2.4] - Unreleased
+## [0.2.4] - 2026-10-03
 
 ### Changed
 
-- Prepare a documentation release that includes the citation corrections made after the v0.2.3 tag.
-- Label the v0.2.3 archive explicitly wherever its DOI is retained as a historical citation.
-- Align the application, JSON export and package version at v0.2.4.
+- Included the citation corrections made after the v0.2.3 tag in this documentation release.
+- Labelled the v0.2.3 archive explicitly wherever its DOI is retained as a historical citation.
+- Aligned the application, JSON export and package version at v0.2.4.
 
-### Release requirement
+### Citation
 
-- Reserve the v0.2.4 Zenodo DOI and insert it into CITATION.cff, CodeMeta, README and the user guide before tagging this release.
-- Preserve the v0.2.3 tag and archive.
+- Reserved [10.5281/zenodo.23122075](https://doi.org/10.5281/zenodo.23122075) before tagging and included it in CITATION.cff, CodeMeta, README and both user-guide citation links.
+- Preserved the v0.2.3 tag and archive.
 
 ### Scientific scope
 

@@ -84,7 +84,7 @@ The application has no random component. The same parameter object returns the s
 
 ## Citation
 
-v0.2.4 is a documentation release candidate; its version-specific Zenodo DOI must be reserved and inserted before the release is tagged. The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) identifies all versions, not an individual release.
+Cite v0.2.4 using its version-specific Zenodo DOI: [10.5281/zenodo.23122075](https://doi.org/10.5281/zenodo.23122075). This DOI was reserved before tagging so the archived source includes its own citation. The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) identifies all versions, not an individual release.
 
 For archived v0.2.3, cite [10.5281/zenodo.23104009](https://doi.org/10.5281/zenodo.23104009). For archived v0.2.2, cite [10.5281/zenodo.22941432](https://doi.org/10.5281/zenodo.22941432).
 
