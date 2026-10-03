@@ -2,6 +2,24 @@
 
 All notable changes are recorded here.
 
+## [0.2.4] - 2026-10-03
+
+### Changed
+
+- Included the citation corrections made after the v0.2.3 tag in this documentation release.
+- Labelled the v0.2.3 archive explicitly wherever its DOI is retained as a historical citation.
+- Aligned the application, JSON export and package version at v0.2.4.
+
+### Citation
+
+- Reserved [10.5281/zenodo.23122075](https://doi.org/10.5281/zenodo.23122075) before tagging and included it in CITATION.cff, CodeMeta, README and both user-guide citation links.
+- Preserved the v0.2.3 tag and archive.
+
+### Scientific scope
+
+- No scientific model or numerical calculation changed.
+- No new experimental validation is claimed.
+
 ## [0.2.3] - 2026-10-02
 
 ### Changed

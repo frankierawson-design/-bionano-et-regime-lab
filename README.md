@@ -14,7 +14,7 @@ The software is intended for **hypothesis generation, dimensional checking, teac
 
 ## Release status
 
-This repository contains **BioNano ET Regime Lab v0.2.3**. The equations and deterministic checks are implemented and tested, but independent held-out experimental validation and a biological observation model remain outstanding. It must not be described as a validated predictive package.
+This repository contains **BioNano ET Regime Lab v0.2.4**. The equations and deterministic checks are implemented and tested, but independent held-out experimental validation and a biological observation model remain outstanding. It must not be described as a validated predictive package.
 
 ## Run locally
 
@@ -84,7 +84,9 @@ The application has no random component. The same parameter object returns the s
 
 ## Citation
 
-Cite v0.2.3 using its archived release DOI: [10.5281/zenodo.23104009](https://doi.org/10.5281/zenodo.23104009). For v0.2.2, cite [10.5281/zenodo.22941432](https://doi.org/10.5281/zenodo.22941432). The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) identifies the software record and resolves to its latest archived version.
+Cite v0.2.4 using its version-specific Zenodo DOI: [10.5281/zenodo.23122075](https://doi.org/10.5281/zenodo.23122075). This DOI was reserved before tagging so the archived source includes its own citation. The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) identifies all versions, not an individual release.
+
+For archived v0.2.3, cite [10.5281/zenodo.23104009](https://doi.org/10.5281/zenodo.23104009). For archived v0.2.2, cite [10.5281/zenodo.22941432](https://doi.org/10.5281/zenodo.22941432).
 
 ## Contributing and support
 
@@ -99,7 +101,7 @@ MIT. See [`LICENSE`](LICENSE).
 AI-assisted tools were used during software implementation, drafting, structural editing and documentation. The author is responsible for reviewing and validating all scientific claims, equations, calculations and released code.
 ## Jain 2024 GNP100 external comparison
 
-The GNP100 polyethylene-glycol linker comparison introduced in v0.2.1 remains part of v0.2.3. The source data were reported by Jain et al. in *Nature Nanotechnology*.
+The GNP100 polyethylene-glycol linker comparison introduced in v0.2.1 remains part of v0.2.4. The source data were reported by Jain et al. in *Nature Nanotechnology*.
 
 Source article: https://doi.org/10.1038/s41565-023-01496-y
 
@@ -116,7 +118,7 @@ npm run jain:gnp100
 
 ## Reproducible GNP100 Monte Carlo uncertainty analysis
 
-The fixed-seed, 100,000-draw uncertainty analysis introduced in v0.2.1 remains part of v0.2.3. It uses the GNP100 polyethylene-glycol linker data reported by Jain et al. in *Nature Nanotechnology* (https://doi.org/10.1038/s41565-023-01496-y).
+The fixed-seed, 100,000-draw uncertainty analysis introduced in v0.2.1 remains part of v0.2.4. It uses the GNP100 polyethylene-glycol linker data reported by Jain et al. in *Nature Nanotechnology* (https://doi.org/10.1038/s41565-023-01496-y).
 
 Run the analysis with:
 
