@@ -78,6 +78,14 @@ docs/scientific-method.md  Equations, units and assumptions
 docs/limitations.md        Scientific and software limitations
 ```
 
+## Validation programme
+
+See the [ranked validation roadmap](docs/validation-roadmap.md) and
+[held-out protocol template](docs/validation-protocol-template.md). Additional
+analytical Bloch-reference tests verify selected constant-coefficient numerical
+cases; they do not constitute experimental validation. The existing GNP100
+summary dataset remains development evidence.
+
 ## Reproducibility
 
 The application has no random component. The same parameter object returns the same outputs. Input and output values can be exported as JSON from the interface. Populations are clipped to `[0,1]` only for plotting; the un-clipped Bloch trajectory remains available in the returned model object.
