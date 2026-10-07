@@ -33,9 +33,9 @@ Specify occupancy-to-flux kinetics with trapping, product formation and recombin
 
 ## Numerical scope and remaining issues
 
-tests/bloch-reference.test.js compares RK4 with an independently expressed analytical solution of the documented constant-coefficient ODE at seven selected cases, including undamped, detuned, dephasing and degenerate limits. It checks raw population trajectories and final Bloch physicality. It does not verify the full UI domain, microscopic bath physics or empirical accuracy.
+The numerical follow-up is implemented: independent analytical references for both propagators, fourth-order RK4 convergence, 182 deterministic UI-domain cases, automatic analytical fallback at the step cap, physicality checks, undefined-ratio status, extrapolation/overflow guards and stale-export prevention. See [numerical verification report](numerical-validation-report.md) for results and limits. This is finite-domain sampling, not exhaustive continuous-domain or empirical validation.
 
-Remaining numerical work: test the declared UI domain and the automatic step cap; quantify convergence near stiff limits; explicitly document the simultaneous zero-coupling/zero-dephasing diagnostic (currently zeta returns Infinity although the ratio is 0/0); flag r < r0 extrapolation and overflow. These are open requirements, not corrected behaviours in this change.
+The [observation-model specification](observation-model-specification.md) turns the measurement and biological requirements into ranked deliverables and acceptance gates. It is a contract for future data/model work; no biological model or held-out experiment is claimed as implemented.
 
 ## Scientific positioning gates
 

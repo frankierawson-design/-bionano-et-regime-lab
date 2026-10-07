@@ -152,3 +152,5 @@ The analysis creates:
 The compressed CSV contains all 100,000 draw-level α values for both the rate-only and length-plus-rate scenarios. The automated test reruns the calculation twice, verifies byte-for-byte reproducibility and checks the expected numerical summaries.
 
 This analysis propagates uncertainty in published summary measurements. It is not a stochastic electron-transfer simulation and does not validate a microscopic mechanism.
+
+Numerical follow-up: [verification results and scope](docs/numerical-validation-report.md), including step-cap safeguards and finite-domain tests. Next empirical work: [observation-model specification](docs/observation-model-specification.md). These additions do not make the package a validated predictive tool.

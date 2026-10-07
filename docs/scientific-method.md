@@ -40,7 +40,7 @@ Gamma2 = gamma_phi + Gamma1/2,
 s_eq = -tanh[E/(2 k_B T)].
 ```
 
-Here `n=(2H_DA, 0, -Delta epsilon)/E`, `Omega=(E/hbar)n`, and `P_A=(1-r_z)/2`. Integration uses fourth-order Runge-Kutta. This is a phenomenological Markovian model rather than a microscopic spectral-density calculation.
+Here `n=(2H_DA, 0, -Delta epsilon)/E`, `Omega=(E/hbar)n`, and `P_A=(1-r_z)/2`. Automatic propagation uses fourth-order Runge-Kutta when dt times the largest angular frequency or decay rate is <= 0.1, and the exact constant-coefficient solution otherwise. Explicit coarse RK4 requests are rejected. Solver metadata and sampling warnings are exported; see [numerical verification](numerical-validation-report.md). This is a phenomenological Markovian model rather than a microscopic spectral-density calculation.
 
 ## 4. Marcus benchmark
 
@@ -70,5 +70,7 @@ These are characteristic inverse times, not molecular transfer rates. Their inte
 zeta = (2 H_DA/hbar)/Gamma2
 A = (Delta G + lambda)^2/(4 lambda k_B T).
 ```
+
+At zero coupling and zero transverse decay, zeta is undefined (null with an explicit status); positive coupling with zero decay is unbounded.
 
 `zeta=1` and `A=1` are reference equalities, not learned or experimentally validated regime boundaries.

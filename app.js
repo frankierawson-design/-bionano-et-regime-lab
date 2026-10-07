@@ -25,6 +25,7 @@ let currentScenarioKey = "qbetNanogap";
 let lastResult;
 
 const formatScientific = (value, digits = 2) => {
+  if (value === null) return "undefined";
   if (!Number.isFinite(value)) return value === Infinity ? "∞" : "—";
   if (value === 0) return "0";
   if (Math.abs(value) >= 1e4 || Math.abs(value) < 1e-3) return value.toExponential(digits);
@@ -100,18 +101,37 @@ function loadScenario(key) {
 }
 
 function parametersFromInputs() {
+  for (const definition of inputDefinitions) {
+    const input = inputElements.get(definition.key).numeric;
+    if (input.value.trim() === "" || !Number.isFinite(Number(input.value)) ||
+        Number(input.value) < definition.min || Number(input.value) > definition.max) {
+      throw new RangeError(`${definition.label} must be between ${definition.min} and ${definition.max} ${definition.unit}`);
+    }
+  }
   return Object.fromEntries([...inputElements].map(([key, elements]) => [key, Number(elements.numeric.value)]));
 }
 
 function update() {
   try {
     lastResult = computeModel(parametersFromInputs());
+    byId("export-button").disabled = false;
+    byId("model-status").hidden = lastResult.warnings.length === 0;
+    byId("model-status").textContent = lastResult.warnings.join(" ");
     document.body.dataset.error = "false";
     renderMetrics(lastResult);
     renderChart(lastResult);
     renderRates(lastResult);
     renderDiagnostics(lastResult);
   } catch (error) {
+    lastResult = undefined;
+    byId("export-button").disabled = true;
+    byId("model-status").hidden = false;
+    byId("model-status").textContent = error.message;
+    for (const id of ["metric-coupling", "metric-marcus", "metric-zeta", "metric-reservoir",
+      "stat-period", "stat-t2", "stat-equilibrium", "diag-zeta", "diag-mixing", "diag-activation"]) byId(id).textContent = "—";
+    byId("rate-bars").replaceChildren();
+    const canvas = byId("population-chart");
+    canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
     document.body.dataset.error = "true";
     console.error(error);
   }
@@ -223,6 +243,7 @@ function renderChart(result) {
 }
 
 function exportResult() {
+  if (!lastResult) return;
   const payload = {
     software: "BioNano ET Regime Lab",
     version: "0.2.4",
@@ -236,9 +257,13 @@ function exportResult() {
       decoherence: lastResult.decoherence,
       marcus: lastResult.marcus,
       reservoir: lastResult.reservoir,
+      dynamics: lastResult.dynamics,
     },
+    warnings: lastResult.warnings,
+    nonFiniteEncoding: "Infinity, -Infinity and NaN are exported as strings; undefined diagnostics use null with an explicit status.",
   };
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const blob = new Blob([JSON.stringify(payload, (_, value) =>
+    typeof value === "number" && !Number.isFinite(value) ? String(value) : value, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;

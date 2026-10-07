@@ -42,3 +42,27 @@ test('small SI reservoir quantities use relative tolerances', () => {
     assert.ok(Math.abs(actual / expected - 1) < 1e-12);
   }
 });
+
+// A resonant undamped two-state system supplies a separate elementary reference.
+test('RK4 fourth-order convergence and analytical resonant reference', () => {
+  const a = { couplingEv: 0.001, deltaEv: 0, temperatureK: 298, gamma1PerPs: 0,
+    gammaPhiPerPs: 0, durationPs: 1 };
+  const angle = 2 * a.couplingEv / 6.582119569e-4;
+  const reference = [0, -Math.sin(angle), Math.cos(angle)];
+  const errors = [64, 128, 256].map(steps => {
+    const r = propagateBloch({ ...a, steps, solver: 'rk4' });
+    return Math.hypot(...r.finalBloch.map((v, i) => v - reference[i]));
+  });
+  assert.ok(errors[0] / errors[1] > 15 && errors[0] / errors[1] < 17);
+  assert.ok(errors[1] / errors[2] > 15 && errors[1] / errors[2] < 17);
+  const analytic = propagateBloch({ ...a, steps: 1, solver: 'analytic' });
+  analytic.finalBloch.forEach((v, i) => assert.ok(Math.abs(v - reference[i]) < 1e-14));
+});
+
+for (const [couplingEv, deltaEv, gamma1PerPs, gammaPhiPerPs] of cases) {
+  test(`explicit analytical trajectory: ${[couplingEv, deltaEv, gamma1PerPs, gammaPhiPerPs]}`, () => {
+    const a = { couplingEv, deltaEv, gamma1PerPs, gammaPhiPerPs, temperatureK: 298, durationPs: 1, steps: 100, solver: 'analytic' };
+    const r = propagateBloch(a);
+    for (const p of r.points) assert.ok(Math.abs(p.acceptorRaw - (1 - exact(a, p.timePs)[2]) / 2) < 1e-12);
+  });
+}
