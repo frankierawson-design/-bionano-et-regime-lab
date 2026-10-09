@@ -88,6 +88,15 @@ summary dataset remains development evidence.
 
 ## Reproducibility
 
+PR #7 changes are unreleased additions after v0.2.4; the v0.2.4 DOI identifies
+its archived release, not this changed source. Cite the exact commit when using
+these additions. JSON exports carry `version: "unreleased-after-0.2.4"` and
+`codeCommit`. Run `npm run provenance` from a clean committed checkout before
+static deployment, and deploy the generated `provenance.json` with that same
+checkout. `npm run serve` does this automatically. Regenerate the file after
+switching commits. Unstamped deployments export `codeCommit: null` with
+`provenanceStatus: "unstamped"`; never infer a commit from the release DOI.
+
 The application has no random component. The same parameter object returns the same outputs. Input and output values can be exported as JSON from the interface. Populations are clipped to `[0,1]` only for plotting; the un-clipped Bloch trajectory remains available in the returned model object.
 
 ## Citation

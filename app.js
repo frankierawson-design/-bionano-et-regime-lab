@@ -242,24 +242,39 @@ function renderChart(result) {
   context.restore();
 }
 
-function exportResult() {
+async function exportResult() {
   if (!lastResult) return;
+  const result = lastResult;
+  const scenarioName = scenarios[currentScenarioKey].name;
+  const scenarioKey = currentScenarioKey;
+  // Provenance is stamped from a clean checkout before serving/deployment.
+  // Missing metadata must never be presented as a known source commit.
+  let codeCommit = null;
+  try {
+    const response = await fetch("./provenance.json", { cache: "no-store" });
+    if (response.ok) {
+      const provenance = await response.json();
+      if (/^[a-f0-9]{40}$/.test(provenance.codeCommit)) codeCommit = provenance.codeCommit;
+    }
+  } catch { /* Unstamped deployments explicitly export null. */ }
   const payload = {
     software: "BioNano ET Regime Lab",
-    version: "0.2.4",
+    version: "unreleased-after-0.2.4",
+    codeCommit,
+    provenanceStatus: codeCommit ? "stamped-clean-checkout" : "unstamped",
     exportedAt: new Date().toISOString(),
-    scenario: scenarios[currentScenarioKey].name,
+    scenario: scenarioName,
     warning: "Illustrative reduced-order output; not a mechanism assignment or experimental prediction.",
-    parameters: lastResult.parameters,
+    parameters: result.parameters,
     outputs: {
-      coupling: lastResult.coupling,
-      twoState: lastResult.twoState,
-      decoherence: lastResult.decoherence,
-      marcus: lastResult.marcus,
-      reservoir: lastResult.reservoir,
-      dynamics: lastResult.dynamics,
+      coupling: result.coupling,
+      twoState: result.twoState,
+      decoherence: result.decoherence,
+      marcus: result.marcus,
+      reservoir: result.reservoir,
+      dynamics: result.dynamics,
     },
-    warnings: lastResult.warnings,
+    warnings: result.warnings,
     nonFiniteEncoding: "Infinity, -Infinity and NaN are exported as strings; undefined diagnostics use null with an explicit status.",
   };
   const blob = new Blob([JSON.stringify(payload, (_, value) =>
@@ -267,7 +282,7 @@ function exportResult() {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `bionano-et-${currentScenarioKey}.json`;
+  anchor.download = `bionano-et-${scenarioKey}.json`;
   anchor.click();
   URL.revokeObjectURL(url);
 }

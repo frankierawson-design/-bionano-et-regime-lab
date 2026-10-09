@@ -21,7 +21,7 @@ test('invalid input clears results, blocks stale exports, and recovers; JSON pre
     addEventListener(name, f) { this.events[name] = f; }
     getBoundingClientRect() { return { width: 600, height: 300 }; }
     getContext() { return context; }
-    click() { this.events.click?.(); }
+    click() { return this.events.click?.(); }
   }
   const byId = id => { if (!nodes.has(id)) nodes.set(id, new Element()); return nodes.get(id); };
   const sandbox = { computeModel, scenarios, Blob, console: { error() {} },
@@ -41,10 +41,19 @@ test('invalid input clears results, blocks stale exports, and recovers; JSON pre
   byId('h0MeV-number').events.change();
   assert.equal(byId('export-button').disabled, false);
   assert.match(byId('metric-zeta').textContent, /undefined/);
-  byId('export-button').click();
+  await byId('export-button').click();
   const payload = JSON.parse(await exported.text());
   assert.equal(payload.outputs.decoherence.zeta, null);
   assert.equal(payload.outputs.decoherence.zetaStatus, 'undefined');
   assert.equal(payload.outputs.twoState.periodPs, 'Infinity');
   assert.ok(payload.outputs.dynamics.points.length > 0);
+  assert.equal(payload.version, 'unreleased-after-0.2.4');
+  assert.equal(payload.codeCommit, null);
+  assert.equal(payload.provenanceStatus, 'unstamped');
+  const codeCommit = 'a'.repeat(40);
+  sandbox.fetch = async () => ({ ok: true, json: async () => ({ codeCommit }) });
+  await byId('export-button').click();
+  const stamped = JSON.parse(await exported.text());
+  assert.equal(stamped.codeCommit, codeCommit);
+  assert.equal(stamped.provenanceStatus, 'stamped-clean-checkout');
 });

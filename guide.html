@@ -472,9 +472,10 @@
       </p>
 
       <p>
-        If the coupling and dephasing rate are both zero, the ratio is
-        mathematically undefined. The current model may display infinity in this
-        boundary case; do not interpret that value physically.
+        If coupling and total transverse decay Γ₂ are both zero, the ratio is
+        mathematically undefined. The interface displays “undefined”; JSON exports
+        contain null with status “undefined”. Nonzero coupling with zero Γ₂
+        gives infinity with status “unbounded”.
       </p>
     </details>
 
@@ -580,9 +581,15 @@
     <h2>Verification status</h2>
 
     <p>
-      Version 0.2.4 retains 12 automated tests, a reproducible comparison
-      with published GNP100 linker summary data and a fixed-seed,
-      100,000-draw uncertainty analysis introduced in v0.2.1.
+      Archived version 0.2.4 has 12 automated tests. The unreleased PR #7
+      changes extend the suite to 34 tests, including analytical Bloch references,
+      fourth-order RK4 convergence and a deterministic 182-case UI-domain audit.
+      Automatic propagation uses RK4 for sufficiently fine steps and the exact
+      constant-coefficient solution otherwise. Physicality, extrapolation and
+      plot-sampling checks are included. See the
+      <a href="docs/numerical-validation-report.md">numerical verification report</a>.
+      The published GNP100 summary comparison and fixed-seed 100,000-draw
+      uncertainty analysis remain development evidence.
     </p>
 
     <p>
