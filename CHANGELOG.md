@@ -2,6 +2,21 @@
 
 All notable changes are recorded here.
 
+## [Unreleased]
+
+### Changed
+
+- Added an exact constant-coefficient Bloch fallback, coarse-RK4 rejection, trajectory physicality checks and extrapolation/plot-sampling warnings.
+- Distinguished undefined zero-coupling/zero-transverse-decay ζ from an unbounded ratio; blocked stale exports after invalid input and documented non-finite JSON encoding.
+- Added a ranked validation roadmap, held-out protocol template, numerical verification report and proposed physical/biological observation-model specification.
+- Extended verification to 34 tests, including analytical references, RK4 convergence and 182 deterministic UI-domain cases; CI now runs syntax checks and tests together.
+- Marked exports as unreleased after v0.2.4 and added optional clean-checkout commit provenance generated for serving or deployment.
+
+### Scientific scope
+
+- The Hamiltonian and relaxation equations are unchanged. Numerical verification does not establish experimental accuracy, a microscopic mechanism or biological prediction.
+- No held-out experiment or fitted biological observation model is claimed. GNP100 summaries remain development evidence.
+
 ## [0.2.4] - 2026-10-03
 
 ### Changed

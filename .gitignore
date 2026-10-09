@@ -4,3 +4,4 @@ coverage/
 *.log
 .idea/
 .vscode/
+provenance.json

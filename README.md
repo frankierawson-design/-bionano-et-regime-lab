@@ -14,7 +14,7 @@ The software is intended for **hypothesis generation, dimensional checking, teac
 
 ## Release status
 
-This repository contains **BioNano ET Regime Lab v0.2.4**. The equations and deterministic checks are implemented and tested, but independent held-out experimental validation and a biological observation model remain outstanding. It must not be described as a validated predictive package.
+This repository contains **unreleased BioNano ET Regime Lab changes after v0.2.4**. The v0.2.4 DOI refers to the archived release. The equations and deterministic checks are implemented and tested, but independent held-out experimental validation and a biological observation model remain outstanding. It must not be described as a validated predictive package.
 
 ## Run locally
 
@@ -78,7 +78,24 @@ docs/scientific-method.md  Equations, units and assumptions
 docs/limitations.md        Scientific and software limitations
 ```
 
+## Validation programme
+
+See the [ranked validation roadmap](docs/validation-roadmap.md) and
+[held-out protocol template](docs/validation-protocol-template.md). Additional
+analytical Bloch-reference tests verify selected constant-coefficient numerical
+cases; they do not constitute experimental validation. The existing GNP100
+summary dataset remains development evidence.
+
 ## Reproducibility
+
+PR #7 changes are unreleased additions after v0.2.4; the v0.2.4 DOI identifies
+its archived release, not this changed source. Cite the exact commit when using
+these additions. JSON exports carry `version: "unreleased-after-0.2.4"` and
+`codeCommit`. Run `npm run provenance` from a clean committed checkout before
+static deployment, and deploy the generated `provenance.json` with that same
+checkout. `npm run serve` does this automatically. Regenerate the file after
+switching commits. Unstamped deployments export `codeCommit: null` with
+`provenanceStatus: "unstamped"`; never infer a commit from the release DOI.
 
 The application has no random component. The same parameter object returns the same outputs. Input and output values can be exported as JSON from the interface. Populations are clipped to `[0,1]` only for plotting; the un-clipped Bloch trajectory remains available in the returned model object.
 
@@ -144,3 +161,5 @@ The analysis creates:
 The compressed CSV contains all 100,000 draw-level α values for both the rate-only and length-plus-rate scenarios. The automated test reruns the calculation twice, verifies byte-for-byte reproducibility and checks the expected numerical summaries.
 
 This analysis propagates uncertainty in published summary measurements. It is not a stochastic electron-transfer simulation and does not validate a microscopic mechanism.
+
+Numerical follow-up: [verification results and scope](docs/numerical-validation-report.md), including step-cap safeguards and finite-domain tests. Next empirical work: [observation-model specification](docs/observation-model-specification.md). These additions do not make the package a validated predictive tool.

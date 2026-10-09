@@ -6,10 +6,11 @@
   "private": true,
   "scripts": {
     "test": "node --test",
-    "check": "node --check src/model.js && node --check src/scenarios.js && node --check app.js && node --test",
-    "serve": "python3 -m http.server 8000",
+    "check": "node --check src/model.js && node --check src/scenarios.js && node --check app.js && node --check scripts/stamp-provenance.mjs && node --test",
+    "serve": "npm run provenance && python3 -m http.server 8000",
     "jain:gnp100": "node scripts/jain-2024-gnp100.mjs",
-    "jain:gnp100:monte-carlo": "node scripts/jain-2024-gnp100-monte-carlo.mjs"
+    "jain:gnp100:monte-carlo": "node scripts/jain-2024-gnp100-monte-carlo.mjs",
+    "provenance": "node scripts/stamp-provenance.mjs"
   },
   "keywords": [
     "bioelectrochemistry",
