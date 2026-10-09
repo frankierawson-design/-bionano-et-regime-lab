@@ -163,3 +163,7 @@ The compressed CSV contains all 100,000 draw-level α values for both the rate-o
 This analysis propagates uncertainty in published summary measurements. It is not a stochastic electron-transfer simulation and does not validate a microscopic mechanism.
 
 Numerical follow-up: [verification results and scope](docs/numerical-validation-report.md), including step-cap safeguards and finite-domain tests. Next empirical work: [observation-model specification](docs/observation-model-specification.md). These additions do not make the package a validated predictive tool.
+
+## Surface electrode kinetics and CV peak screening
+
+An unreleased [surface-confined Butler–Volmer extension](docs/cv-peak-kinetics.md) maps prescribed potential to redox occupancy, Faradaic current and charging current. Run `npm run cv:example` for illustrative curves. Archived CV feature screening is supplied separately; no experimental kinetic rate or biological calibration is claimed. The browser Explorer does not yet expose this module.

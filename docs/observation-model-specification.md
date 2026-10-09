@@ -32,3 +32,7 @@ For every parameter record symbol, units, admissible range, source and uncertain
 ## What changes the scientific claim
 
 A frozen model beating a credible baseline on independent raw data, with meaningful uncertainty and constrained parameters, supports a specified empirical domain. A successfully predicted discriminating perturbation adds mechanistic support. A separately tested biological observation model supports only its measured endpoints and conditions. Code checks, development-set fits, Monte Carlo draws from published summaries and release numbering do not establish these claims.
+
+## Implemented surface-electrode extension
+
+See [CV peak analysis and surface kinetics](cv-peak-kinetics.md) for a separate Butler–Volmer occupancy/current API and verified illustrative simulations. It assumes a noninteracting surface-confined couple and does not map the Bloch population directly to current. Archived CV screening has not established a defensible redox-pair assignment or fitted k0; calibration and independent-sample validation remain outstanding.
