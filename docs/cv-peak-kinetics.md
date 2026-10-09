@@ -47,6 +47,10 @@ rates from 10 to 1000 mV/s) from the archived porphyrin analysis package. Use:
 python scripts/cv-peak-screening.py --source /path/to/porphyrin --output cv-peaks
 ```
 
+The Python analysis additionally requires NumPy, SciPy, pandas, openpyxl and
+Matplotlib; the archived environment pins are in `scripts/requirements-cv.txt`.
+These dependencies are separate from the dependency-free browser calculation.
+
 Original applied potential, time and current columns are used. The first full
 descending and ascending sweeps are kept; a short terminal reverse segment is
 excluded. PBS and AuNPs subtraction uses interpolation on the matching sweep
@@ -91,6 +95,9 @@ maximum occupancy errors 3.37e-5, 8.43e-6, 2.11e-6 and 5.27e-7 with 500, 1000,
 consistent with second-order midpoint propagation. Maximum integrated charge
 discrepancy was 2.07e-25 C. This is finite-case numerical verification, not a
 domain-wide error bound or experimental validation.
+
+Reproduce the independent ODE comparison using
+`python scripts/verify-surface-cv.py --module src/electrode-kinetics.js`.
 
 - Laviron E. General expression of the linear potential sweep voltammogram in
   the case of diffusionless electrochemical systems. J Electroanal Chem 101
