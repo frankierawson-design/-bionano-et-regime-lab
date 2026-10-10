@@ -14,7 +14,7 @@ The software is intended for **hypothesis generation, dimensional checking, teac
 
 ## Release status
 
-This repository contains **unreleased BioNano ET Regime Lab changes after v0.2.4**. The v0.2.4 DOI refers to the archived release. The equations and deterministic checks are implemented and tested, but independent held-out experimental validation and a biological observation model remain outstanding. It must not be described as a validated predictive package.
+This repository contains **BioNano ET Regime Lab v0.3.0**. The version-specific DOI is 10.5281/zenodo.23273881. The equations and deterministic checks are implemented and tested, but independent held-out experimental validation and a biological observation model remain outstanding. It must not be described as a validated predictive package.
 
 ## Run locally
 
@@ -88,9 +88,8 @@ summary dataset remains development evidence.
 
 ## Reproducibility
 
-PR #7 changes are unreleased additions after v0.2.4; the v0.2.4 DOI identifies
-its archived release, not this changed source. Cite the exact commit when using
-these additions. JSON exports carry `version: "unreleased-after-0.2.4"` and
+The numerical safeguards and electrode extension are included in v0.3.0.
+Cite the version-specific DOI and exact source commit. JSON exports carry `version: "0.3.0"` and
 `codeCommit`. Run `npm run provenance` from a clean committed checkout before
 static deployment, and deploy the generated `provenance.json` with that same
 checkout. `npm run serve` does this automatically. Regenerate the file after
@@ -101,7 +100,7 @@ The application has no random component. The same parameter object returns the s
 
 ## Citation
 
-Cite v0.2.4 using its version-specific Zenodo DOI: [10.5281/zenodo.23122075](https://doi.org/10.5281/zenodo.23122075). This DOI was reserved before tagging so the archived source includes its own citation. The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) identifies all versions, not an individual release.
+Cite v0.3.0 using its version-specific Zenodo DOI: [10.5281/zenodo.23273881](https://doi.org/10.5281/zenodo.23273881). This DOI was reserved before tagging so the archived source includes its own citation. The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) identifies all versions, not an individual release.
 
 For archived v0.2.3, cite [10.5281/zenodo.23104009](https://doi.org/10.5281/zenodo.23104009). For archived v0.2.2, cite [10.5281/zenodo.22941432](https://doi.org/10.5281/zenodo.22941432).
 
@@ -166,4 +165,6 @@ Numerical follow-up: [verification results and scope](docs/numerical-validation-
 
 ## Surface electrode kinetics and CV peak screening
 
-An unreleased [surface-confined Butler–Volmer extension](docs/cv-peak-kinetics.md) maps prescribed potential to redox occupancy, Faradaic current and charging current. Run `npm run cv:example` for illustrative curves. Archived CV feature screening is supplied separately; no experimental kinetic rate or biological calibration is claimed. The browser Explorer does not yet expose this module.
+A [surface-confined Butler–Volmer extension](docs/cv-peak-kinetics.md) maps prescribed potential to redox occupancy, Faradaic current and charging current. Run `npm run cv:example` for illustrative curves. Archived CV feature screening is supplied separately; no experimental kinetic rate or biological calibration is claimed. The browser Explorer does not yet expose this module.
+
+Companion manuscript calculations, archived EIS/CV analyses and Figure 7: [dataset v3](https://doi.org/10.5281/zenodo.23266959). The original v0.2.2 molecular source remains preserved in that dataset.
