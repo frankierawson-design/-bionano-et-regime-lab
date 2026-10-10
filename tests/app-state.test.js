@@ -47,7 +47,7 @@ test('invalid input clears results, blocks stale exports, and recovers; JSON pre
   assert.equal(payload.outputs.decoherence.zetaStatus, 'undefined');
   assert.equal(payload.outputs.twoState.periodPs, 'Infinity');
   assert.ok(payload.outputs.dynamics.points.length > 0);
-  assert.equal(payload.version, 'unreleased-after-0.2.4');
+  assert.equal(payload.version, '0.3.0');
   assert.equal(payload.codeCommit, null);
   assert.equal(payload.provenanceStatus, 'unstamped');
   const codeCommit = 'a'.repeat(40);

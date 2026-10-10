@@ -2,15 +2,17 @@
 
 All notable changes are recorded here.
 
-## [Unreleased]
+## [0.3.0] - 2026-10-10
 
 ### Changed
+
+- Added a surface-confined Butler–Volmer electrode module, CV example, archived-CV screening scripts and independent SciPy reference comparison. The full suite now contains 40 tests. The module is not exposed in the browser Explorer.
 
 - Added an exact constant-coefficient Bloch fallback, coarse-RK4 rejection, trajectory physicality checks and extrapolation/plot-sampling warnings.
 - Distinguished undefined zero-coupling/zero-transverse-decay ζ from an unbounded ratio; blocked stale exports after invalid input and documented non-finite JSON encoding.
 - Added a ranked validation roadmap, held-out protocol template, numerical verification report and proposed physical/biological observation-model specification.
 - Extended verification to 34 tests, including analytical references, RK4 convergence and 182 deterministic UI-domain cases; CI now runs syntax checks and tests together.
-- Marked exports as unreleased after v0.2.4 and added optional clean-checkout commit provenance generated for serving or deployment.
+- Added optional clean-checkout commit provenance and aligned exports and citation metadata with v0.3.0 (DOI 10.5281/zenodo.23273881).
 
 ### Scientific scope
 

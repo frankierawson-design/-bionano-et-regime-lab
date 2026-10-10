@@ -259,7 +259,7 @@ async function exportResult() {
   } catch { /* Unstamped deployments explicitly export null. */ }
   const payload = {
     software: "BioNano ET Regime Lab",
-    version: "unreleased-after-0.2.4",
+    version: "0.3.0",
     codeCommit,
     provenanceStatus: codeCommit ? "stamped-clean-checkout" : "unstamped",
     exportedAt: new Date().toISOString(),

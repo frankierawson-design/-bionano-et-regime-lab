@@ -4,7 +4,7 @@ This extension adds a potential-dependent surface redox model and a descriptive
 screen of the archived porphyrin CVs. No experimental rate constant has been
 fitted, no biological observation model has been calibrated, and no independent
 experimental prediction has been tested. The existing molecular/Bloch model is
-unchanged. These are unreleased additions after v0.2.4.
+unchanged. These additions are included in v0.3.0 (DOI 10.5281/zenodo.23273881).
 
 ## Surface redox model
 
