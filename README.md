@@ -100,7 +100,7 @@ The application has no random component. The same parameter object returns the s
 
 ## Citation
 
-Cite v0.3.0 using its version-specific Zenodo DOI: [10.5281/zenodo.23273881](https://doi.org/10.5281/zenodo.23273881). This DOI was reserved before tagging so the archived source includes its own citation. The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) identifies all versions, not an individual release.
+Cite v0.3.0 using its version-specific Zenodo DOI: [10.5281/zenodo.23273881](https://doi.org/10.5281/zenodo.23273881). The software archive was published on 10 October 2026 and contains tag `v0.3.0`, commit `c49dcc7b1a81d42f68364ad8a4a263dbb57aaf25`. The DOI was reserved before tagging so the archived source includes its own citation. The [Zenodo concept DOI](https://doi.org/10.5281/zenodo.22900956) identifies all versions, not an individual release.
 
 For archived v0.2.3, cite [10.5281/zenodo.23104009](https://doi.org/10.5281/zenodo.23104009). For archived v0.2.2, cite [10.5281/zenodo.22941432](https://doi.org/10.5281/zenodo.22941432).
 
@@ -117,7 +117,7 @@ MIT. See [`LICENSE`](LICENSE).
 AI-assisted tools were used during software implementation, drafting, structural editing and documentation. The author is responsible for reviewing and validating all scientific claims, equations, calculations and released code.
 ## Jain 2024 GNP100 external comparison
 
-The GNP100 polyethylene-glycol linker comparison introduced in v0.2.1 remains part of v0.2.4. The source data were reported by Jain et al. in *Nature Nanotechnology*.
+The GNP100 polyethylene-glycol linker comparison introduced in v0.2.1 remains part of v0.3.0. The source data were reported by Jain et al. in *Nature Nanotechnology*.
 
 Source article: https://doi.org/10.1038/s41565-023-01496-y
 
@@ -134,7 +134,7 @@ npm run jain:gnp100
 
 ## Reproducible GNP100 Monte Carlo uncertainty analysis
 
-The fixed-seed, 100,000-draw uncertainty analysis introduced in v0.2.1 remains part of v0.2.4. It uses the GNP100 polyethylene-glycol linker data reported by Jain et al. in *Nature Nanotechnology* (https://doi.org/10.1038/s41565-023-01496-y).
+The fixed-seed, 100,000-draw uncertainty analysis introduced in v0.2.1 remains part of v0.3.0. It uses the GNP100 polyethylene-glycol linker data reported by Jain et al. in *Nature Nanotechnology* (https://doi.org/10.1038/s41565-023-01496-y).
 
 Run the analysis with:
 
