@@ -24,11 +24,12 @@ const K_B_EV_K = 8.617333262145e-5;
 const FARADAY = 96485.33212;
 const GAS_CONSTANT = 8.31446261815324;
 
-function near(actual, expected, tol = 1e-9) {
-  assert.ok(Number.isFinite(actual));
-  const scale = Math.max(1, Math.abs(expected));
-  assert.ok(Math.abs(actual - expected) < scale * tol,
-    `expected ${expected}, obtained ${actual}`);
+function near(actual, expected, rtol = 1e-9, atol = 0) {
+  assert.ok(Number.isFinite(actual) && Number.isFinite(expected));
+  const error = Math.abs(actual - expected);
+  const allowed = atol + rtol * Math.abs(expected);
+  assert.ok(error <= allowed,
+    `expected ${expected}, obtained ${actual}; error ${error} exceeds ${allowed}`);
 }
 
 test('independent two-state detuned population at first oscillation maximum', () => {
@@ -90,7 +91,9 @@ test('nonadiabatic Marcus rate scales with coupling squared at equal nuclear par
 
 test('conductance-capacitance conversion returns 1/tau in inverse seconds', () => {
   const r = reservoirRates({conductanceNs: 4, quantumCapacitanceAf: 10});
-  near(r.gcqPerSecond, 4e8, 1e-4);
+  near(r.conductanceS, 4e-9, 1e-12);
+  near(r.capacitanceF, 1e-17, 1e-12);
+  near(r.gcqPerSecond, 4e8, 1e-12);
   near(1 / r.gcqPerSecond, 2.5e-9, 1e-12);
   // These are mathematical rates of stipulated G and C, not measured interfaces.
 });
