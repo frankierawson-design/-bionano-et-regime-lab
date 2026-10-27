@@ -16,3 +16,16 @@ jobs:
         with:
           node-version: 20
       - run: npm run check
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/requirements-verification.txt
+      - run: python -m pip install -r scripts/requirements-verification.txt
+      - name: Verify surface solver and save independent reference report
+        run: python scripts/verify-surface-cv.py --module src/electrode-kinetics.js --output verification/surface-model.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: surface-model-verification
+          path: verification/surface-model.json
+          if-no-files-found: error
