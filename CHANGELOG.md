@@ -2,6 +2,12 @@
 
 All notable changes are recorded here.
 
+## Unreleased
+
+- Fixed the independent surface-CV verifier overwriting its command-line options before saving its report. CI now executes the SciPy comparison and uploads the report.
+- Replaced hard-coded analysis software versions with package-version and scoped source-commit metadata. Generated outputs do not mark their own source as changed. Exports without Git metadata report unknown source identity.
+- Added provenance regression checks and retained the existing numerical expectations. See the dated [verification follow-up](docs/verification-follow-up-2026-10-27.md).
+
 ## [0.3.0] - 2026-10-10
 
 ### Changed

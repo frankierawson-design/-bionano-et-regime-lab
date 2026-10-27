@@ -1,4 +1,5 @@
 import { readFile, mkdir, writeFile } from "node:fs/promises";
+import { analysisProvenance } from "./analysis-provenance.mjs";
 import {
   effectiveCoupling,
   marcusBenchmark,
@@ -102,7 +103,7 @@ const shortestObservedProxy =
   dataset.data[0].ratePerSecond;
 
 const output = {
-  softwareVersion: "0.2.1",
+  ...analysisProvenance(),
   sourceSoftwareFunctions: [
     "effectiveCoupling",
     "marcusBenchmark",

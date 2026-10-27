@@ -4,6 +4,7 @@ import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import { gunzipSync } from "node:zlib";
 import { fileURLToPath } from "node:url";
+import { analysisProvenance } from "../scripts/analysis-provenance.mjs";
 
 const repositoryRoot = new URL("../", import.meta.url);
 
@@ -79,7 +80,10 @@ test(
       secondSummaryFile.toString("utf8"),
     );
 
-    assert.equal(summary.softwareVersion, "0.2.1");
+    const provenance = analysisProvenance();
+    for (const key of ['softwareVersion', 'codeCommit', 'sourceTreeDirty', 'sourcePaths']) {
+      assert.deepEqual(summary[key], provenance[key]);
+    }
     assert.equal(summary.seed, 20260905);
     assert.equal(summary.drawsPerScenario, 100_000);
 

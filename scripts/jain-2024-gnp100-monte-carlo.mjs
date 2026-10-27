@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { gzipSync } from "node:zlib";
+import { analysisProvenance } from "./analysis-provenance.mjs";
 
 const SEED = 20260905;
 const DRAWS = 100_000;
@@ -207,7 +208,7 @@ const summary = {
   analysis:
     "Jain et al. GNP100 apparent distance-decay uncertainty analysis",
 
-  softwareVersion: "0.2.1",
+  ...analysisProvenance(),
 
   sourceDoi:
     "https://doi.org/10.1038/s41565-023-01496-y",

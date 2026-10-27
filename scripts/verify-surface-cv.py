@@ -16,10 +16,10 @@ assert reference.success
 records=[]
 for count in [500,1000,2000,4000]:
     ts=np.linspace(0,4.8,count+1);es=[potential(t) for t in ts]
-    args=dict(timeS=ts.tolist(),potentialV=es,totalRedoxChargeC=1e-8,capacitanceF=2e-9,
+    simulation_parameters=dict(timeS=ts.tolist(),potentialV=es,totalRedoxChargeC=1e-8,capacitanceF=2e-9,
               initialReduced=.2,k0PerS=k0,formalPotentialV=E0,alpha=alpha,n=1,temperatureK=T)
     code=f"import {{simulateSurfaceCV}} from {json.dumps(MODULE)};import {{readFileSync}} from 'node:fs';console.log(JSON.stringify(simulateSurfaceCV(JSON.parse(readFileSync(0,'utf8')))));"
-    result=json.loads(subprocess.check_output(['node','--input-type=module','-e',code],input=json.dumps(args),text=True))
+    result=json.loads(subprocess.check_output(['node','--input-type=module','-e',code],input=json.dumps(simulation_parameters),text=True))
     theta=np.array([p['reducedFraction'] for p in result['points']]);exact=reference.sol(ts)[0]
     error=float(np.max(abs(theta-exact)))
     q=sum(r['faradaicCurrentA']*r['dtS'] for r in result['intervals'])
